@@ -1,0 +1,785 @@
+
+/*      Settings     */
+ 
+*, *:before, *:after {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+
+p {
+    font-size: 18px;
+}
+
+body{
+    overflow-x:hidden;
+    overflow-y:scroll;
+    position:relative;
+    left:0;
+    right:0;
+    height:100%;
+    margin:0;
+    padding:0;
+    font:12px/1.6em "Lato", san-serif;
+    color:#777777;
+    background:#f2f2f2
+    }
+
+a,a:hover{
+    word-wrap:break-word;
+    text-decoration:none;
+    color:#0e6e8b
+    }
+
+a:hover{
+    color:#239fc5
+    }
+
+img{
+    max-width:100%;
+    display:block
+    }
+
+h1, h2, h3, h4, h5 {
+    font:400 16px/1.2em 'Helvetica Neue', "Arial", sans-serif;
+    text-shadow:0 1px 0 1px rgba(0,0,0,.3);
+    font-family:Montserrat;
+    color:#555555
+    }
+
+blockquote{
+    padding:0 0 0 15px;
+    margin:0 0 0 15px;
+    border-left:2px solid #ccc
+    }
+
+a,
+.like_button,
+body,
+#sidebar,
+#sidebar a#avatar img,
+#sidebar #instagram #instagram-feed li img,
+#sidebar #dribbble #dribbble-feed img,
+#sidebar #twitter .content,
+.mfp-fade.mfp-bg,
+.mfp-fade.mfp-wrap .mfp-content,
+.entry .photo .photo-buttons{
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease
+    }
+
+#fade,
+.entry a.overlay,
+.entry .photo .photoset-grid img{
+    -webkit-transition:all .4s ease;
+    transition:all .4s ease
+    }
+
+a#install-button{
+    width:100px;
+    height:20px;
+    padding:2px 4px;
+    background:url("http://static.tumblr.com/3zmswwt/soKmzhmhg/install_button.png") rgba(0,0,0,.4) no-repeat;
+    border:1px solid rgba(0,0,0,0.18);
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    z-index:99999;
+    top:-30px;
+    right:5px;
+    position:fixed
+    }
+
+a#install-button:hover{
+    background:url("http://static.tumblr.com/3zmswwt/soKmzhmhg/install_button.png") rgba(0,0,0,.32) no-repeat
+    }
+
+span#install-theme-text{
+    float:right;
+    font:400 12px Arial;
+    text-shadow:1px 1px 1px rgba(0,0,0,.08);
+    color:white
+    }
+
+#tumblr_controls{
+    position:fixed;
+    bottom:0 !important;
+    right:0 !important
+    }
+
+.like_button{
+    position:absolute;
+    opacity:0
+    }
+
+.like_button.liked{
+    opacity:1 !important
+    }
+
+/*      End-Setting     */
+
+/*    Sidebar     */
+nav {
+    width: 100%;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+ 
+nav ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+ 
+nav ul li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #ccc;
+    width: 16.6667%; /* fallback for non-calc() browsers */
+    width: calc(100% / 6);
+    box-sizing: border-box;
+}
+ 
+nav ul li:first-child {
+    border-left: none;
+}
+ 
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #616161;
+    padding: 10px 0;
+}
+#nav {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+#nav ul {
+}
+#nav li {
+    width: 20%;
+    display: inline;
+    background-color: #fff;
+}
+#nav li:hover {
+    background: #f5f5f5;
+}
+#header{
+    width:100%;
+    padding:70px 40px;
+    text-align:center;
+    background:#ffffff;
+    box-shadow:0 1px #efefef
+    }
+
+#header h1{
+    display:inline
+    }
+
+#header h1 a{
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font:48px "Montserrat";
+    color:#161616
+    }
+
+#header a#click-slide{
+    cursor:pointer;
+    float:left;
+    font:17px/1.3em "icon";
+    color:#161616
+    }
+
+#header a#click-slide:hover{
+    opacity:.6
+    }
+
+#sidebar a#avatar img{
+    box-shadow:0 1px 2px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,.1)
+    }
+
+#sidebar a#avatar img:hover{
+    opacity:.8
+    }
+
+#sidebar{
+    position:fixed;
+    overflow-y:scroll;
+    width:230px;
+    height:100%;
+    top:0;
+    left:-230px;
+    background:#000000
+    }
+
+#sidebar h2{
+    margin:0 0 20px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font:400 12px "Montserrat",sans-serif;
+    color:#ffffff
+    }
+
+#sidebar #description{
+    text-align:justify;
+    color:#dddddd
+    }
+
+#sidebar #social{
+    display:none;
+display:block;display:block;display:block;display:block;
+    }
+
+#sidebar #social a{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin:0 20px 0 0;
+    text-align:center;
+    font:15px/15px "icon";
+    color:#dddddd;
+    opacity:.9
+    }
+
+#sidebar #social a:hover{
+    opacity:.6
+    }
+
+#sidebar #navigation li{
+    list-style-type:none;
+    }
+
+#sidebar #navigation li a{
+    display:block;
+    padding:5px 0;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    font:12px "Montserrat",sans-serif;
+    color:#dddddd
+    }
+
+#sidebar #navigation li a:hover{
+    color:#ffffff
+    }
+
+#sidebar #instagram #instagram-feed{
+    width:170px;
+    height:170px;
+    padding:0;
+    list-style:none;
+    overflow:hidden
+    }
+
+#sidebar #instagram #instagram-feed li{
+    float:left;
+    margin:0 0 5px
+    }
+
+#sidebar #instagram #instagram-feed li img{
+    width:82.5px;
+    height:82.5px;
+    padding:0;
+    opacity:.85
+    }
+
+#sidebar #instagram #instagram-feed li:nth-child(even){
+    margin:0 0 5px 5px
+    }
+
+#sidebar #instagram #instagram-feed li img:hover{
+    opacity:1
+    }
+
+#sidebar #dribbble #dribbble-feed img{
+    float:left;
+    width:80px;
+    margin:0 0 5px
+    }
+
+#sidebar #dribbble #dribbble-feed img:nth-child(odd){
+    margin:0 5px 5px 0
+    }
+
+#sidebar #dribbble #dribbble-feed img:hover{
+    opacity:.85
+    }
+
+#sidebar #dribbble #dribbble-feed:after{ 
+    content:"";
+    display:block; 
+    height:0; 
+    clear:both
+    }
+
+#sidebar #twitter .content{
+    margin:10px 0 0 0;
+    color:#dddddd
+    }
+
+#sidebar #twitter .content:hover{
+    opacity:.85
+    }
+
+#sidebar #avatar img,
+#sidebar #description,
+#sidebar #social,
+#sidebar #navigation,
+#sidebar #instagram,
+#sidebar #dribbble,
+#sidebar #twitter{
+    padding:25px 35px 25px 25px;
+    box-shadow: 0 1.5px rgba(0,0,0,.05),
+                inset 0 1px rgba(255,255,255,.1)
+    }
+
+/*      End-Sidebar     */
+
+#posts-container{
+    position:relative;
+    background:#f2f2f2
+    }
+
+#posts{
+    width:100%
+    }
+
+.entry{
+    display:block;
+    position:relative;
+    width:25%;
+    -webkit-transition:opacity 1s ease 1s;
+    transition:opacity 1s ease 1s
+    }
+
+.entry img,
+.entry iframe{
+    max-width:100%
+    }
+
+.entry .media iframe{
+    width:100%;
+    display:block
+    }
+
+.entry .photo.photoset{
+    padding:30px;
+    box-shadow: inset 1px 1px #efefef,
+                1px 1px #efefef
+    }
+
+.entry .photo{
+    position:relative !important
+    }
+
+.entry .photo img{
+    width:100%
+    }
+
+.entry .photo a.overlay{
+    position:absolute;
+    z-index:5;
+    width:100%;
+    height:100%;
+    background:#079bb9;
+    opacity:0
+    }
+
+.entry:hover a.overlay{
+    opacity:.60
+    }
+
+.entry .photo .photo-buttons{
+    position:absolute;
+    top:50%;
+    width:100%;
+    margin:-20px 0;
+    text-align:center;
+    z-index:20;
+    transform:scale(.4,.4);
+    -ms-transform:scale(.4,.4);
+    -webkit-transform:scale(.4,.4);
+    opacity:0
+    }
+
+.entry:hover .photo-buttons{
+    transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    opacity:1
+    }
+
+.entry .photo .photo-buttons a{
+    position:relative;
+    display:inline-block;
+    width:40px;
+    height:40px;
+    margin:0 7px;
+    text-align:center;
+    font:17px/42px "icon";
+    border-radius:20px;
+    }
+
+.entry .photo .photo-buttons .photoset-grid{
+    display:inline
+    }
+
+.entry .photo .photo-buttons .like_button{
+    top:3px;
+    left:10px
+    }
+
+.entry .photo .photoset-grid img:hover{
+    opacity:.7
+    }
+
+.entry .post-buttons a,
+.entry .photo .photo-buttons a{
+    color:#ffffff;
+    box-shadow:0 0 0 2px #ffffff
+    }
+
+.entry .post-buttons a:hover,
+.entry .photo .photo-buttons a:hover{
+    background:rgba(255,255,255,.2)
+    }
+
+
+
+.entry .photo-post{
+    display:none
+    }
+
+.entry .text-post{
+    box-shadow: inset 1px 1px #efefef,
+                1px 1px #efefef
+    }
+
+.entry .captions p{
+    margin:0
+    }
+
+.entry .details,
+.entry .captions{
+    padding:20px 30px;
+    box-shadow: inset 1px 1px #efefef,
+                1px 1px #efefef
+    }
+
+ .entry .media-post .captions,
+ .entry .media-post .details{
+    padding:20px 
+    }
+ 
+.entry .details,
+.entry .details a{
+    font:11px/20px "arial";
+    color:#bbbbbb
+    }
+
+.entry .details a:hover{
+    color:#777777
+    }
+
+.entry .details .tags{
+    margin:0 0 10px 0
+    }
+
+.entry .details .tags a{
+    margin:0 10px 0 0
+    }
+ 
+.entry .details .buttons{
+    display:inline;
+    float:right;
+    margin:2px 0 0 0
+    }
+ 
+.entry .details .buttons a{
+    display:inline-block;
+    font:13px "icon";
+    margin:0 0 0 10px;
+    opacity:.8
+    }
+ 
+.entry .details .buttons a.like-button{
+    position:relative;
+    cursor:pointer
+    }
+
+.entry .details .buttons .like_button{
+    bottom:0;
+    left:0
+    }
+
+.entry .text{
+    padding:20px 30px;
+    box-shadow: inset 1px 1px #efefef,
+                1px 1px #efefef
+    }
+
+.entry .text .question{
+    border-bottom:1px solid #efefef
+    }
+ 
+.entry .text .odd,.entry .text .even{
+    margin:5px 0 0 0;
+    padding:10px 7px;
+    }
+
+.entry .text .odd{
+    background:#eee
+    }
+ 
+.entry .text a.link{
+    display:block;
+    font:15px "Montserrat",sans-serif;
+    color:#555555
+    }
+ 
+.entry .text a.link:hover{
+    opacity:.7
+    }
+ 
+.entry .text a.link span{
+    margin:0 0 0 20px;
+    font:14px/2.5em 'icon'
+    }
+ 
+.entry .text .question{
+    padding:0 0 15px 0
+    }
+ 
+.entry .quote h3{
+    font-weight:400;
+    line-height:1.6em
+    }
+
+.entry .text .quote-symbol{
+    position:absolute;
+    top:0;
+    left:15px;
+    font:160px "arial";
+    opacity:.1
+    }
+ 
+.entry .text .source{
+    margin:20px 0 0 0;
+    text-align:right
+    }
+
+/*      End-Entry       */
+
+/*      Pagination      */
+
+#pagination{
+    width:100%;
+    margin:auto;
+    padding:40px;
+    text-align:center;
+    box-shadow:inset 0 1px #efefef
+    }
+
+#pagination:after{
+    content:" ";
+    display: block; 
+    height:0; 
+    clear:both
+    }
+
+#pagination a{
+    display:inline;
+    text-align:center;
+    text-transform:uppercase;
+    font:12px "Montserrat";
+    color:#555555
+    }
+
+#pagination a#newer{
+    float:left
+    }
+
+#pagination a#older{
+    float:right
+    }
+
+/*      End-Pagination      */
+
+/*      Permalink       */
+
+#permalink #fade{
+    opacity:0 !important
+    }
+
+#permalink #posts{
+    padding:30px 0
+    }
+
+#permalink .permalink-box,
+#permalink .entry{
+    display:block;
+    width:650px;
+    height:auto !important;
+    margin:0 auto 30px;
+    padding:30px
+    }
+
+#permalink .entry .captions,
+#permalink .entry .details{
+    padding:20px 0
+    }
+
+#permalink .entry .text,
+#permalink .entry .photo,
+#permalink .entry .photo.photoset{
+    padding:0;
+    box-shadow:0 !important
+    }
+
+#permalink .entry .text,
+#permalink .entry .text-post,
+#permalink .entry .captions,
+#permalink .entry .details{
+    box-shadow:inset 0 0 transparent !important
+    }
+
+#permalink .permalink-box ol.notes{
+    margin:20px 0 0 -35px;
+    list-style-type:none
+    }
+
+#permalink .permalink-box ol.notes li.note{
+    padding:3px 0
+    }
+
+#permalink .permalink-box ol.notes li.more_notes_link_container{
+    border-top:1px solid #efefef
+    }
+
+#permalink .permalink-box ol.notes li.more_notes_link_container,
+#permalink .permalink-box ol.notes li.more_notes_link_container a.more_notes_link{
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font:11px Montserrat;
+    color:#777777
+    }
+
+#permalink .permalink-box ol.notes li.like:after,
+#permalink .permalink-box ol.notes li.reblog:after,
+#permalink .permalink-box ol.notes li.reply:after,
+#permalink .permalink-box ol.notes li.answer:after,
+#permalink .permalink-box ol.notes li.original_post:after{
+    float:right;
+    margin:-17px 0 0 0;
+    font:14px icon;
+    opacity:.5
+    }
+
+#permalink .permalink-box ol.notes li.like:after{content:"z"}#permalink .permalink-box ol.notes li.reblog:after{content:"c"}#permalink .permalink-box ol.notes li.reply:after{content:"k";font:13px icon}#permalink .permalink-box ol.notes li.answer:after{content:"k";font-size:11px}#permalink .permalink-box ol.notes li.original_post:after{content:"d"}
+
+#permalink .permalink-box ol.notes img{
+    display:inline;
+    padding:0 10px 0 0
+    }
+
+#permalink .permalink-box ol.notes li.more_notes_link_container{
+    margin:30px 0 0 0;
+    padding:25px 0 0 0
+    }
+
+/*      Animation       */
+
+#posts,#loading{
+    opacity:0;
+    -webkit-transition:opacity 1s ease;
+    transition:opacity 1s ease
+    }
+
+body.slide{
+    left:230px;
+    overflow:hidden
+    }
+
+#sidebar.slide{
+    left:0
+    }
+
+#fade{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background:rgba(0,0,0,.8);
+    pointer-events:none;
+    z-index:100;
+    opacity:0
+    }
+
+#fade.slide{
+    opacity:1;
+    pointer-events:auto
+    }
+
+#infscr-loading{
+    opacity:0
+    }
+
+#loading{
+    position:absolute;
+    width:36px;
+    height:36px;
+    top:300px;
+    left:50%;
+    margin:-20px 0 0 -19px;
+    border-radius:4px;
+    z-index:100;
+    background:url('http://static.tumblr.com/j6tha7z/AFfmuponn/ajax-loader.gif') no-repeat center #fff;
+    opacity:1;
+    filter:alpha(opacity = 0)
+    }
+
+/*      Responsive      */
+
+.entry,#infscr-loading img,#pagination,.permalink-box{
+    background:#ffffff
+    }
+
+@media screen and (max-width:400px){
+
+    #header{
+        padding:10px 20px
+        }
+
+    #header h1 a{
+        font:18px "Montserrat";
+        }
+
+    #header a#click-slide{
+        font:17px/1.3em "icon";
+        }
+
+    #permalink .permalink-box{
+        text-align:center !important
+        }
+
+    #permalink .permalink-box ol.notes img,
+    #permalink .permalink-box ol.notes li:after{
+        display:none
+        }
+
+    }
+
+/*      End-Responsive      */
+
+/*      Adjustments     */
+
+
+#pagination{opacity:0 !important}
+#posts{padding-bottom:120px}
+
+
+#topbar{top:0;opacity:1}
+#posts,#pagination{opacity:1}
+#loading{opacity:0}
+
+
+
